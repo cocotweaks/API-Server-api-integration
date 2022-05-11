@@ -1,39 +1,55 @@
 
 
   # API-Server-api-integration
-[![APIKey](https://img.shields.io/badge/APIAuth-2.0-blue)](https://github.com/baontq23/Logos-API-Authentication/)
-[![Vietnamese Guide](https://img.shields.io/badge/VietnameseGuide-2.0-green)](https://github.com/baontq23/Logos-API-Authentication/)
-> Lib đơn giản thêm trình xác thực cho tweak của bạn
->> Có thể sử dụng trong các project Theos, dragon maker, etc..
+[![APIKey](https://img.shields.io/badge/APIAuth-3.0-blue)](https://github.com/baontq23/Logos-API-Authentication/)
+[![Vietnamese Guide](https://img.shields.io/badge/VietnameseGuide-1.0-green)](https://github.com/baontq23/Logos-API-Authentication/blob/main/READMEVN.md)
+> Simple lib authentication with objective c. For internal use
+>> Theos, dragon maker, etc..
 -----
-## Hình ảnh với FAHMenu
+## Example project with FAHMenu
 <p align="center">
 	<img src="https://github.com/baontq23/Logos-API-Authentication/blob/main/img/1.png"/>
 	<br>
 	<img src="https://github.com/baontq23/Logos-API-Authentication/blob/main/img/2.png"/>
 </p>
 
-# Cách sử dụng
-## Bước 1. Đăng ký tài khoản trên hệ thống APIServer
-[Vào bảng điều khiển](https://baontq.com/admin/index.php)
-- Tiến hành tạo một gói mới trên hệ thống để nhận thông tin
-- Hãy điền phiên bản và các trường yêu cầu. Một số dữ liệu có thể nhập ngẫu nhiên do chưa có. (ví dụ như mã sha1, link download, ...) 
-- Sau khi tạo xong, ta nhập các thông tin vào APIConect.xm
+# Example Useage objective-c
+```obj-c
+#import "Auth/APIKey.h"
+void function(){
+   //paid 
+   [APIClient paid:^{
+       //load menu
+       loadview(); //etc
+       menuSetup();
+   }];
+}
+void vipFuntion() {
+  [APIClient vipPaid:^ {
+      //memory patcher 
+      //admin funtion
+  }];
+}
+
+```
+# How to use
+## Step 1. Register or login APIServer
+[Dashboard](https://baontq.com/admin/index.php)
 <p align="center">
 	<img src="https://github.com/baontq23/Logos-API-Authentication/blob/main/img/4.png"/>
 	<br>
 	<img src="https://github.com/baontq23/Logos-API-Authentication/blob/main/img/5.png"/>
 </p>
 
-## Bước 2. Cấu hình APIConect.xm
+## Step 2. Config APIConect.xm
 ```obj-c
 #import "Auth/APIKey.h"
 
 static void didFinishLaunching(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef info) {
-[APIClient setEmail:@"email@examble.com"];//email của bạn đăng ký trên hệ thống
-[APIClient setDebid:0];//mã id của gói
-[APIClient setDebVersion:@"lqmfa1.0"];//phiên bản của gói
-[APIClient setDylibName:@"keytest"];// tên của dylib, xem trong MAKEFILE phần TWEAKNAME.
+[APIClient setEmail:@"email@examble.com"];//your email on server
+[APIClient setDebid:0];//your package id
+[APIClient setDebVersion:@"lqmfa1.0"];//package version
+[APIClient setDylibName:@"keytest"];// dylib name on MAKEFILE
 
 }
 
@@ -42,7 +58,7 @@ static void didFinishLaunching(CFNotificationCenterRef center, void *observer, C
 }
 
 ```
-## Bước 3. Sử dụng với các hàm yêu cầu phải mua mới có thể sử dụng (Ví dụ với FAHMenu)
+## Step 3. Set up functions (Example with FAHMenu)
 ```obj-c
 #import "baseicon.h"
 #import "FAHMenu/Macros.h"
@@ -76,24 +92,18 @@ timer(2){
   CFNotificationCenterAddObserver(CFNotificationCenterGetLocalCenter(), NULL, &didFinishLaunching, (CFStringRef)UIApplicationDidFinishLaunchingNotification, NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
 }
 ```
-
-## Kết quả 
+## Result 
 <p align="center">
 	<img src="https://github.com/baontq23/Logos-API-Authentication/blob/main/img/3.jpg"/>
 	<br>
 </p>
 
-## Yêu cầu
-- Đăng ký tài khoản [tại đây](https://baontq.com/admin/index.php)
-- Dự án có phí nhưng trong thời gian thử nghiệm sẽ miễn phí trong thời gian và giới hạn nhất định
-- Trong project phải có thư mục layout như template.
-## Hướng dẫn bằng video
+## Video Guide
 [Youtube](https://youtu.be/BNMgdwZNJcU)
 
+## Requirement
+- Register account on [Dashboard](https://baontq.com/admin/index.php)
+- layout folder (like template)
 ## Credits
 * [dogo](https://github.com/dogo)
   * For [SCLAlertView](https://github.com/dogo/SCLAlertView)
-* [jdg](https://github.com/jdg)
-  * For [MBProgressHUD](https://github.com/jdg/MBProgressHUD)
-* [fahlnbg](https://github.com/fahlnbg)
-  * For [FAHMenu-iOS-Mod-Menu](https://github.com/fahlnbg/FAHMenu-iOS-Mod-Menu)
