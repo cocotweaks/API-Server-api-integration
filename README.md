@@ -34,7 +34,7 @@ void vipFuntion() {
 ```
 # How to use
 ## Step 1. Register or login APIServer
-[Dashboard](https://baontq.com/admin/index.php)
+[Dashboard](https://ios-api-server.xyz)
 <p align="center">
 	<img src="https://github.com/baontq23/Logos-API-Authentication/blob/main/img/4.png"/>
 	<br>
