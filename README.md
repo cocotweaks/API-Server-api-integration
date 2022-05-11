@@ -34,7 +34,7 @@ void vipFuntion() {
 ```
 # How to use
 ## Step 1. Register or login APIServer
-[Dashboard](https://ios-api-server.xyz)
+[Dashboard](https://dev.ios-api-server.xyz)
 <p align="center">
 	<img src="https://github.com/baontq23/Logos-API-Authentication/blob/main/img/4.png"/>
 	<br>
@@ -102,7 +102,7 @@ timer(2){
 [Youtube](https://youtu.be/BNMgdwZNJcU)
 
 ## Requirement
-- Register account on [Dashboard](https://ios-api-server.xyz)
+- Register account on [Dashboard](https://dev.ios-api-server.xyz)
 - layout folder (like template)
 ## Credits
 * [dogo](https://github.com/dogo)
