@@ -102,7 +102,7 @@ timer(2){
 [Youtube](https://youtu.be/BNMgdwZNJcU)
 
 ## Requirement
-- Register account on [Dashboard](https://baontq.com/admin/index.php)
+- Register account on [Dashboard](https://ios-api-server.xyz)
 - layout folder (like template)
 ## Credits
 * [dogo](https://github.com/dogo)
